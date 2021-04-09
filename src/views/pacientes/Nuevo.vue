@@ -1,65 +1,59 @@
 <template>
     <div>
         <Header />
-            <div class="container">
+            <div class="container" id="formulario">
                 
 
-                <form action="" class="form-horizontal border">
-                     <div class="card-header">
-                        <h3>Nuevo Paciente</h3>
-                        </div>
-                    <div class="form-group left">
-                       <label for="" class="control-label col-sm-2">Nombre</label>
-                       <div class="col-sm-10">
+                <form action="" class="form-horizontal">
+                    <div class="card-header">
+                        <h2 class="h2">Nuevo Paciente</h2>
+                    </div>
+                    <div class="form-group">
+                       <label for="" class="control-label col-sm-2 mt-3">Nombre</label>
+                       <div class="col-sm-12">
                           <input type="text" class="form-control" name="nombre" id="nombre" v-model="form.nombre">
                        </div>
                     </div>
-                    <div class="form-group left">
+                    <div class="form-group">
                        <label for="" class="control-label col-sm-2">Direccion</label>
-                       <div class="col-sm-10">
+                       <div class="col-sm-12">
                           <input type="text" class="form-control" name="direccion" id="direccion" v-model="form.direccion">
                        </div>
                     </div>
-                    <div class="form-group left row">
-                      <div class="col">
+                    <div class="form-group row">
+                        <div class="col">
                             <label for="" class="control-label col-sm-3">Correo</label>
-                            <div class="col-sm-7">
+                            <div class="col-sm-12">
                                 <input type="text" class="form-control" name="correo" id="correo" v-model="form.correo">
                             </div>
                         </div>
                         <div class="col">
-                          <label for="" class="control-label col-sm-5">codigo Postal</label>
-                          <div class="col-sm-7">
-                              <input type="text" class="form-control" name="codigopostal" id="codigopostal" v-model="form.codigoPostal">
-                          </div>
+                            <label for="" class="control-label col-sm-2">DNI</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="dni" id="dni" v-model="form.dni">
+                            </div>
                         </div> 
                     </div>
-                    <div class="form-group left row">
+                    <div class="form-group row">
                          <div class="col">
                             <label for="" class="control-label col-sm-2">Genero</label>
-                            <div class="col-sm-7">
+                            <div class="col-sm-12">
                                 <input type="text" class="form-control" name="genero" id="genero" v-model="form.genero">
                             </div>
                           </div>
                          <div class="col">
                               <label for="" class="control-label col-sm-2">Telefono</label>
-                              <div class="col-sm-7">
-                                  <input type="text" class="form-control" name="telefono" id="telefono" v-model="form.telefono">
+                              <div class="col-sm-12">
+                                  <input type="tel" class="form-control" name="telefono" id="telefono" v-model="form.telefono">
                               </div>
                         </div>
                     </div>
-                    <div class="form-group left row ">
+                    <div class="form-group row ">
                         <div class="col">
                               <label for="" class="control-label col-sm-2">Fecha nacimiento</label>
-                            <div class="col-sm-7">
+                            <div class="col-sm-12">
                                 <input type="text" class="form-control" name="fechanacimineto" id="telefono" v-model="form.fechaNacimiento">
                             </div>
-                        </div>
-                        <div class="col">
-                               <label for="" class="control-label col-sm-2">DNI</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="dni" id="dni" v-model="form.dni">
-                                </div>
                         </div>
                     </div>
 
@@ -89,7 +83,6 @@ export default {
                 "direccion": "", 
                 "dni" : "",
                 "correo":"",
-                "codigoPostal" :"",
                 "genero" : "",
                 "telefono" : "",
                 "fechaNacimiento" : "",
@@ -106,6 +99,7 @@ export default {
         guardar(){
             this.form.token = localStorage.getItem("token");
             this.form.idusuario = localStorage.getItem("usuario");
+            console.log(this.form);
             axios.post("http://localhost/Apiproyect/pacientes",this.form)
             .then(data =>{
                 console.log(data);
@@ -113,7 +107,7 @@ export default {
                 this.$router.push("/pacientes/dashboard");
             }).catch( e =>{
                 console.log(e);
-                 this.makeToast("Error","Error al guardar al paciente ","error", "danger");
+                 this.makeToast("Error","Error al guardar al paciente ", "danger");
             })
         },
         salir(){

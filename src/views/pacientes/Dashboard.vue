@@ -3,31 +3,42 @@
         <Header/>
 
             <div class="container izquierda">
-
+                 <!-- No entres dosilmente en esa buena noche :v -->
                 <button class="btn btn-primary" v-on:click="nuevo()" >Nuevo paciente</button>
                 <br><br>
 
-
-                <table class="table table-hover" v-if="cant !== 0">
-                    <thead>
+                <!-- Buscador De Pacientes -->
+                <!-- <form id="demo-b">
+                    <input type="search" placeholder="Buscar" v-model="searchData">
+                </form> -->
+                <div class="control-label">
+                    <div class="control">
+                        <input type="search" placeholder="Buscar" v-model="searchData">
+                    </div>
+                </div>
+                <br>
+                <table class="table table-hover" id="tabla" v-if="cant !== 0">
+                    <thead role='rowgroup'>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th scope="col" class="center">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">DNI</th>
                             <th scope="col">TELEFONO</th>
                             <th scope="col">CORREO</th>
-                            <th scope="col">Actions</th>
+                            <th class="center">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr v-for="paciente in Listapacientes" :key="paciente.PacienteId">
-                            <th scope="row">{{ paciente.PacienteId}}</th>
-                            <td>{{ paciente.Nombre }}</td>
-                            <td>{{ paciente.DNI }}</td>
-                            <td>{{ paciente.Telefono }}</td>
-                            <td>{{ paciente.Correo }}</td>
-                            <a href="/pacientes/editar" class="btn btn-primary" v-on:click="editar(paciente.PacienteId)">Mas detalles</a>
-                            <a class="btn btn-success" title="Contactar por WhatsApp" v-on:click="contactar(paciente.Telefono)" type="button">wusap</a>
+                    <tbody role='rowgroup'>
+                        <tr v-for="Listapacientes in filteredPacientes" :key="Listapacientes.PacienteId">
+                            <th scope="row" data-th='ID'>{{ Listapacientes.PacienteId}}</th>
+                            <td data-th='Nombre'>{{ Listapacientes.Nombre }}</td>
+                            <td data-th='DPI'>{{ Listapacientes.DNI }}</td>
+                            <td data-th='Telefono'>{{ Listapacientes.Telefono }}</td>
+                            <td data-th='Correo'>{{ Listapacientes.Correo }}</td>
+                            <td data-th='Actions'>
+                                <button href="/pacientes/editar" class="btn btn-primary center" title="Mas detalles de este Paciente" v-on:click="editar(Listapacientes.PacienteId)">Mas detalles <img src="@/assets/font-selection-editor.png" width="35px" alt=""></button>
+                                <button class="btn center" title="Contactar por WhatsApp" v-on:click="contactar(Listapacientes.Telefono)" type="button"><img src="@/assets/whatsapp.png" width="50px" class="rounded" alt=""></button>
+                            </td>
                         </tr>
                 
                     </tbody>
@@ -40,7 +51,7 @@
                         </div>
                     </div>
 
-            </div><br><br>
+            </div><br><br><br><br>
 
         <Footer />
     </div>
@@ -53,18 +64,36 @@ export default {
     name:"Dashboard",
     data(){
         return {
-            Listapacientes:null,
+            Listapacientes: [],
             pagina:1,
             user:null,
             token:null,
             username:null,
             cant:null,
-            rol:null
+            rol:null,
+            searchData: ''
         }
     },
     components:{
         Header,
         Footer
+    },
+    computed:{
+        filteredPacientes (){
+            if(!this.searchData) return this.Listapacientes
+
+            return this.Listapacientes.filter(Listapacientes => {
+                return [
+                    Listapacientes.PacienteId,
+                    Listapacientes.Nombre,
+                    Listapacientes.DNI,
+                    Listapacientes.Telefono,
+                    Listapacientes.Correo
+                ].find(field => {
+                    return field.toLowerCase().includes(this.searchData.toLowerCase().trim())
+                })
+            })
+        }
     },
     methods:{
             editar(id){
@@ -79,9 +108,9 @@ export default {
     },
     
     mounted:function(){
-        this.user = localStorage.usuario;
-        this.token = localStorage.token;
-        this.username = localStorage.nameuser;
+        this.user = localStorage.getItem("usuario");
+        this.token = localStorage.getItem("token");
+        this.username = localStorage.getItem("nameuser");
         this.rol = localStorage.getItem("idrol");
         let direccion = "http://localhost/Apiproyect/pacientes?iduser=" + this.user + "&token=" + this.token;
         axios.get(direccion).then( data =>{

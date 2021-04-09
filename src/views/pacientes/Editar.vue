@@ -1,51 +1,54 @@
 <template>
         <div>
           <Header />
-            <div class="container">
+            <div class="title-box">
+              <h2 class="h2">Modificar Paciente</h2>
+            </div>
+            <div class="container"  id="formulario">
                 <form action="" class="form-horizontal">
-                    <div class="form-group left">
-                       <label for="" class="control-label col-sm-2">Nombre</label>
-                       <div class="col-sm-10">
+                    <div class="form-group">
+                       <label for="" class="control-label col-sm-2"><b>Nombre</b></label>
+                       <div class="col-sm-12">
                           <input type="text" class="form-control" name="nombre" id="nombre" v-model="form.nombre">
                        </div>
                     </div>
-                    <div class="form-group left">
-                       <label for="" class="control-label col-sm-2">Direccion</label>
-                       <div class="col-sm-10">
+                    <div class="form-group">
+                       <label for="" class="control-label col-sm-2"><b>Direccion</b></label>
+                       <div class="col-sm-12">
                           <input type="text" class="form-control" name="direccion" id="direccion" v-model="form.direccion">
                        </div>
                     </div>
-                    <div class="form-group left row">
-                      <div class="col">
-                            <label for="" class="control-label col-sm-3">Correo</label>
-                            <div class="col-sm-7">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="" class="control-label col-sm-3"><b>Correo</b></label>
+                            <div class="col-sm-12">
                                 <input type="text" class="form-control" name="correo" id="correo" v-model="form.correo">
                             </div>
                         </div>
                         <div class="col">
-                          <label for="" class="control-label col-sm-5">codigo Postal</label>
-                          <div class="col-sm-7">
+                          <label for="" class="control-label col-sm-5"><b>codigo Postal</b></label>
+                          <div class="col-sm-12">
                               <input type="text" class="form-control" name="codigopostal" id="codigopostal" v-model="form.codigoPostal">
                           </div>
                         </div> 
                     </div>
-                    <div class="form-group left row">
+                    <div class="form-group row">
                          <div class="col">
-                            <label for="" class="control-label col-sm-2">Genero</label>
-                            <div class="col-sm-7">
+                            <label for="" class="control-label col-sm-2"><b>Genero</b></label>
+                            <div class="col-sm-12">
                                 <input type="text" class="form-control" name="genero" id="genero" v-model="form.genero">
                             </div>
                           </div>
                          <div class="col">
-                              <label for="" class="control-label col-sm-2">Telefono</label>
-                              <div class="col-sm-7">
+                              <label for="" class="control-label col-sm-2"><b>Telefono</b></label>
+                              <div class="col-sm-12">
                                   <input type="text" class="form-control" name="telefono" id="telefono" v-model="form.telefono">
                               </div>
                         </div>
                     </div>
-                    <div class="form-group left">
-                        <label for="" class="control-label col-sm-2">Fecha nacimiento</label>
-                       <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="" class="control-label col-sm-2"><b>Fecha nacimiento</b></label>
+                       <div class="col-sm-12">
                           <input type="text" class="form-control" name="fechanacimineto" id="telefono" v-model="form.fechaNacimiento">
                        </div>
                     </div>
@@ -139,10 +142,7 @@ export default {
 }
 </script>
 <style scoped>
- .left{
-   text-align: left;
- };
- .margen{
+.margen{
    margin-left: 15px;
    margin-right: 15px;;
  }
