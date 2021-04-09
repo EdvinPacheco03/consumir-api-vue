@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <label for="" class="control-label col-sm-2">DNI</label>
+                            <label for="" class="control-label col-sm-2">DPI</label>
                             <div class="col-sm-12">
                                 <input type="text" class="form-control" name="dni" id="dni" v-model="form.dni">
                             </div>

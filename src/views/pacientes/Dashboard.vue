@@ -22,7 +22,7 @@
                         <tr>
                             <th scope="col" class="center">ID</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">DNI</th>
+                            <th scope="col">DPI</th>
                             <th scope="col">TELEFONO</th>
                             <th scope="col">CORREO</th>
                             <th class="center">Actions</th>
