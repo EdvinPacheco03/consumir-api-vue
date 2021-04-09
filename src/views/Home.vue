@@ -56,8 +56,8 @@ export default {
           localStorage.usuario = data.data.result.una.usuarioid;
           localStorage.token = data.data.result.token;
           localStorage.nameuser = data.data.result.una.usuario;
-          localStorage.idrol = data.data.result.una.idrol;
-          this.$router.push('pacientes/dashboard');
+          localStorage.setItem('idrol', data.data.result.una.idrol);
+          this.$router.push('inicio');
         }else{
           this.error = true;
           this.error_msg = data.data.result.error_msg;
