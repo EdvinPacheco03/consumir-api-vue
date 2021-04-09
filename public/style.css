@@ -6,3 +6,267 @@ body{
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
 
  }
+
+ /* Estilo de Cards */
+
+.card-box {
+    position: relative;
+    color: #fff;
+    padding: 20px 10px 40px;
+    margin: 20px 0px;
+}
+.card-box:hover {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+.card-box:hover .icon i {
+    font-size: 100px;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+.card-box .inner {
+    padding: 5px 10px 0 10px;
+}
+.card-box h3 {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+}
+.card-box p {
+    font-size: 15px;
+}
+.card-box .icon {
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    right: 5px;
+    z-index: 0;
+    font-size: 72px;
+    color: rgba(0, 0, 0, 0.15);
+}
+.card-box .card-box-footer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    text-align: center;
+    padding: 3px 0;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-decoration: none;
+}
+.card-box:hover .card-box-footer {
+    background: rgba(0, 0, 0, 0.3);
+}
+.bg-blue {
+    background-color: #00c0ef !important;
+}
+.bg-green {
+    background-color: #00a65a !important;
+}
+.bg-orange {
+    background-color: #f39c12 !important;
+}
+.bg-red {
+    background-color: #d9534f !important;
+}
+
+
+/* Estilos de Tabla */
+thead{
+    text-align: center;
+}
+th{
+    font-family: 'Lobster', cursive; 
+}
+
+.btn-nueva {
+    margin: 2px 0 14px 0;
+}
+td, th,button{
+    text-align: center;
+}
+
+#tabla{
+    padding: 1px 1px 0px 1px;
+
+    background: white;
+    border-radius: 8px;
+}
+
+/* Formulario de Modificacion */
+#formulario{
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+}
+.h2{
+    margin: 1px;
+    color: rgb(28, 17, 92);
+    font-family: 'Lobster', cursive; 
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+label{
+    font-family: 'Lobster', cursive; 
+    font-size: 18px;
+}
+
+input{
+    text-align: center;
+}
+
+/* Inicio */
+.text-card{
+    font-size: 20px !important;
+    color: #000;
+    font-family: 'Lobster', cursive;
+    text-align: center !important;
+}
+
+.h3{
+    font-size: 30px !important;
+    color: #000;
+    font-family: 'Gill Sans Ultra Bold', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center !important;
+}
+
+/*Estilos del buscador*/
+form {
+    color: #133783;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    -webkit-border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  input {
+      outline: none;
+  }
+  input[type=search] {
+      -webkit-appearance: textfield;
+      -webkit-box-sizing: content-box;
+      font-family: inherit;
+      font-size: 100%;
+  }
+  input::-webkit-search-decoration,
+  input::-webkit-search-cancel-button {
+      display: none; /* remove the search and cancel icon */
+  }
+  
+  /* search input field */
+  input[type=search] {
+      background: #fffefe url(../src/assets/search-icon.png) no-repeat 9px center;
+      border: solid 1px #ccc;
+      padding: 9px 10px 9px 32px;
+      width: 55px;
+      
+      -webkit-border-radius: 10em;
+      -moz-border-radius: 10em;
+      border-radius: 10em;
+      
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s;
+  }
+  input[type=search]:focus {
+      width: 130px;
+      background-color: #fff;
+      border-color: #6dcff6;
+      
+      -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+      -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+      box-shadow: 0 0 5px rgba(109,207,246,.5);
+  }
+  
+  /* placeholder */
+  input:-moz-placeholder {
+      color: #999;
+  }
+  input::-webkit-input-placeholder {
+      color: #999;
+  }
+  
+  /* demo B */
+  #demo-b input[type=search] {
+      width: 15px;
+      padding-left: 10px;
+      color: transparent;
+      cursor: pointer;
+  }
+  #demo-b input[type=search]:hover {
+      background-color: #fff;
+  }
+  #demo-b input[type=search]:focus {
+      width: 130px;
+      padding-left: 32px;
+      color: #000;
+      background-color: #fff;
+      cursor: auto;
+  }
+  #demo-b input:-moz-placeholder {
+      color: transparent;
+  }
+  #demo-b input::-webkit-input-placeholder {
+      color: transparent;
+  }
+
+  /* Tablas Reponsivas */
+
+  @media only screen and (max-width: 1024px){
+    #tabla{
+        padding: 1px 1px 3px 1px;
+
+        background: white;
+        border-radius: 8px;
+    }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin: 0 0 1rem 0;
+    }
+    
+
+
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding-left: 50% !important;
+
+    }
+
+    td:before {
+        /* Now like a table header */
+        content: attr(data-th) ": ";
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0;
+        font-weight: 800;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        line-height: 45px;
+        font-family: 'Lobster', cursive; 
+    }
+}
+    
+    /* ************************* */
