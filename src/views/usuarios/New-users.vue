@@ -5,7 +5,7 @@
                 <form action="" class="form-horizontal">
                     <div class="form-group">
                       <div class="card-header">
-                        <h2 class="h2">Nuevo Paciente</h2>
+                        <h2 class="h2">Nuevo Usuario</h2>
                       </div>
                         <div class="form-group">
                             <label for="" class="control-label col-sm-2">Nombre</label>
