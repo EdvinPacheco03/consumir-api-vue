@@ -7,7 +7,7 @@
                 <button class="btn btn-primary" v-on:click="nuevo()" >Nueva Cita</button>
                 <br><br>
 
-                <table class="table table-hover" v-if="cant !== 0">
+                <table class="table table-hover" id="tabla" v-if="cant !== 0">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -21,11 +21,11 @@
                     <tbody>
                         <tr v-for="cita in Listacitas" :key="cita.CitaId" v-on:click="editar(cita.CitaId)">
                             <th scope="row">{{ cita.CitaId}}</th>
-                            <td>{{ cita.Estado }}</td>
-                            <td>{{ cita.Fecha }}</td>
-                            <td>{{ cita.Motivo }}</td>
-                            <td>{{ cita.Nombre }}</td>
-                            <a class="btn btn-success" title="Mas detalles" type="button" :key="cita.CitaId" v-on:click="editar(cita.CitaId)" >Mas detalles</a>
+                            <td data-th="Estado">{{ cita.Estado }}</td>
+                            <td data-th="Fecha">{{ cita.Fecha }}</td>
+                            <td data-th="Motivo">{{ cita.Motivo }}</td>
+                            <td data-th="Nombre">{{ cita.Nombre }}</td>
+                            <td data-th="Acciones"><a class="btn btn-success mb-2" title="Mas detalles" type="button" :key="cita.CitaId" v-on:click="editar(cita.CitaId)" >Mas detalles<img src="@/assets/font-selection-editor.png" width="35px" alt=""></a></td>
                         </tr>
                 
                     </tbody>

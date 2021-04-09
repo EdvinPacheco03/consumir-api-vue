@@ -1,39 +1,39 @@
 <template>
         <div>
           <Header />
-          <div class="container">
+          <div class="container" id="formulario">
                 <form action="" class="form-horizontal">
                     <!-- Datos para obtener el paciente -->
                      <div class="form-group border">
                         <div class="col">
                             <h4 class="text-muted">Informacion del Paciente</h4>
-                          </div>
-                        <div class="form-group left row">
+                        </div>
+                        <div class="form-group row">
                           <div class="col">
                             <input type="hidden" class="form-control" name="idpaciente" id="idpaciente" v-model="formp.idpaciente">
                                 <label for="" class="control-label col-sm-3">DPI</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="dpi" id="dpi" v-model="form.dpiP" v-on:change="buscar()">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="dpi" id="dpi" v-model="form.dpiP" v-on:keyup="buscar()">
                                 </div>
                           </div>
                           <div class="col">
                             <label for="" class="control-label col-sm-5">Nombre</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="nombre" id="nombre" v-model="formp.nombre">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="nombre" id="nombre" v-model="formp.nombre" readonly>
                             </div>
                           </div> 
                         </div>
-                        <div class="form-group left row">
+                        <div class="form-group row">
                             <div class="col">
                                 <label for="" class="control-label col-sm-2">Direccion</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="direccion" id="direccion" v-model="formp.direccion">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="direccion" id="direccion" v-model="formp.direccion" readonly>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="" class="control-label col-sm-2">Telefono</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="telefono" id="telefono" v-model="formp.telefono">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="telefono" id="telefono" v-model="formp.telefono" readonly>
                                 </div>
                             </div>
                         </div>
@@ -42,35 +42,35 @@
                     <div class="col">
                             <h4 class="text-muted">Informacion de la Cita</h4>
                           </div>
-                    <div class="form-group left">
+                    <div class="form-group">
                        <label for="" class="control-label col-sm-2">Fecha</label>
-                       <div class="col-sm-10">
+                       <div class="col-sm-12">
                           <input type="date" class="form-control" name="fecha" id="fecha" v-model="form.fecha">
                        </div>
                     </div>
-                    <div class="form-group left row">
+                    <div class="form-group row">
                         <div class="col">
                           <label for="" class="control-label col-sm-5">Horario de Inicio</label>
-                          <div class="col-sm-7">
+                          <div class="col-sm-12">
                               <input type="time" class="form-control" name="horaI" id="horaI" v-model="form.horarioIn">
                           </div>
                         </div> 
                         <div class="col">
                             <label for="" class="control-label col-sm-3">Horario Fin</label>
-                            <div class="col-sm-7">
+                            <div class="col-sm-12">
                                 <input type="time" class="form-control" name="horaF" id="horaF" v-model="form.horarioFn">
                             </div>
                         </div>
                     </div>
-                    <div class="form-group left">
+                    <div class="form-group">
                         <label for="" class="control-label col-sm-2">Motivo</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                             <input type="text" class="form-control" name="motivo" id="motivo" v-model="form.motivo">
                         </div>
                     </div>
                     <div class="form-group">
                       <button type="button" class="btn btn-primary mr-2" v-on:click="editar()" >Editar</button>
-                      <button type="button" class="btn btn-primary mr-2" v-on:click="eliminar()" >Eliminar</button>
+                      <button type="button" class="btn btn-danger mr-2" v-on:click="eliminar()" >Eliminar</button>
                       <button type="button" class="btn btn-dark margen" v-on:click="salir()"  >Salir</button>
                     </div> 
                 </form>
