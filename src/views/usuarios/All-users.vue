@@ -6,7 +6,7 @@
 
                 <button class="btn btn-primary" v-on:click="nuevo()" >Nuevo usuario</button>
                 <br><br>
-                <table class="table table-hover" v-if="cant !== 0">
+                <table class="table table-hover" id="tabla" v-if="cant !== 0">
                     <thead class="bg-primary">
                         <tr>
                             <th scope="col">ID</th>
@@ -19,10 +19,10 @@
                     <tbody>
                         <tr v-for="usuario in Listausuarios" :key="usuario.id_usuario">
                             <th scope="row">{{ usuario.id_usuario}}</th>
-                            <td>{{ usuario.nombre }}</td>
-                            <td>{{ usuario.usuario }}</td>
-                            <td>{{ usuario.telefono }}</td>
-                            <a class="btn btn-success" title="Mas detalles" type="button" :key="usuario.id_usuario" v-on:click="editar(usuario.id_usuario)" >Mas detalles</a>
+                            <td data-th="Nombre">{{ usuario.nombre }}</td>
+                            <td data-th="Usuario">{{ usuario.usuario }}</td>
+                            <td data-th="Telefono">{{ usuario.telefono }}</td>
+                            <td data-th="Acciones"><a class="btn btn-success" title="Mas detalles" type="button" :key="usuario.id_usuario" v-on:click="editar(usuario.id_usuario)" >Mas detalles</a></td>
                         </tr>
                     </tbody>
                 </table>

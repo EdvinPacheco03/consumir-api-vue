@@ -1,39 +1,42 @@
 <template>
         <div>
           <Header />
-          <div class="container">
-                <form action="" class="form-horizontal border">
+          <div class="container" id="formulario">
+                <form action="" class="form-horizontal">
                     <div class="form-group">
-                        <div class="form-group left">
+                      <div class="card-header">
+                        <h2 class="h2">Nuevo Paciente</h2>
+                      </div>
+                        <div class="form-group">
                             <label for="" class="control-label col-sm-2">Nombre</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <input type="text" class="form-control" name="nombre" id="nombre" v-model="form.nombre">
                             </div>
                         </div>
-                        <div class="form-group left row">
+                        <div class="form-group row">
                             <div class="col">
                                 <label for="" class="control-label col-sm-3">Usuario</label>
-                                <div class="col-sm-7">
+                                <div class="col-sm-12">
                                     <input type="email" class="form-control" name="correo" id="usuario" v-model="form.usuario">
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="" class="control-label col-sm-5">Password</label>
-                                <div class="col-sm-7">
+                                <div class="col-sm-12">
                                     <input type="password" class="form-control" name="password" id="password" v-model="form.password">
                                 </div>
                             </div> 
                         </div>
-                        <div class="form-group left row">
+                        <div class="form-group row">
                             <div class="col">
                                 <label for="" class="control-label col-sm-2">Telefono</label>
-                                <div class="col-sm-7">
+                                <div class="col-sm-12">
                                     <input type="tel" class="form-control" name="telefono" id="telefono" v-model="form.telefono">
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="" class="control-label col-sm-2">Rol</label>
-                                <div class="col-sm-7">
+                                <div class="col-sm-12">
                                     <input type="number" class="form-control" name="idrol" id="idrol" v-model="form.idrol">
                                 </div>
                             </div>
