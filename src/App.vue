@@ -4,6 +4,20 @@
     <router-view/>
   </div>
 </template>
+<script>
+  import {mapActions} from 'vuex';
+
+  export default {
+    //methods nos sirve para instanciar las funciones.
+    methods:{
+      ...mapActions(['userAdmin'])
+    },
+    //Created nos sirve para llamar las funciones.
+    created(){
+      this.userAdmin();
+    }
+  }
+</script>
 
 <style>
 #app {
